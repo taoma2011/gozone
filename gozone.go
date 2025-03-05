@@ -392,6 +392,8 @@ func NewScanner(src io.Reader) *Scanner {
 	}
 }
 
+func (s *Scanner) GetOrigin() string { return s.origin }
+
 func (s *Scanner) SetOrigin(domain string) error {
 	if domain[len(domain)-1] != '.' {
 		return fmt.Errorf("Tried to set $ORIGIN to relative domain")
